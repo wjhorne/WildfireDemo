@@ -1,4 +1,5 @@
 # WildfireDemo
+<img width="864" height="840" alt="wildfire" src="https://github.com/user-attachments/assets/21c37afb-fc6a-4916-a73a-6e84658cc91e" />
 
 # Project specification
 
