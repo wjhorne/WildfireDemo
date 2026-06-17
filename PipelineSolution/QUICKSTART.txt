@@ -1,0 +1,42 @@
+===============================================================================
+QUICKSTART FOR AI ASSISTANTS — WILDFIRE STRATEGY PIPELINE
+===============================================================================
+
+REQUIRES:
+  Python 3.9+ (tested on Python 3.12)
+
+SETUP (one time):
+  ./setup.sh
+
+OPTIMIZE A STRATEGY:
+  ./query.sh "Best strategy with 3 firefighters to minimize burned area"
+  ./query.sh "64x64 grid, 180 turns, seed 12345, 3 firefighters" --format pdf --output report.pdf
+  ./query.sh "fire at 30,30, firefighters start at 5,5 and 25,25, 2 firefighters"
+
+VALIDATE THE ENGINE:
+  ./query.sh "example configuration" --validate
+
+EXAMPLE QUERIES:
+  "Best strategy to minimize burned area"
+  "64x64 grid, 180 turns, 3 firefighters"
+  "fire at 30,30, firefighters start at 5,5 and 25,25"
+  "40x40 grid, 100 turns, seed 7, 2 firefighters"
+  "Generate a PDF report with 3 firefighters"
+
+WHAT IT DOES:
+  Parses the query -> builds a SimulationConfig -> searches the firefighter
+  motion strategies exposed by DevelopmentSolution (the engine's strategy seam)
+  -> ranks by final burned area -> recommends the best -> prints/saves a report.
+
+OUTPUT FORMATS:
+  --format text (default): ranked strategy comparison + recommended strategy
+  --format pdf:            3-page report (summary, burned-area-over-time plot,
+                           final landscape under the recommended strategy)
+
+DEFAULT PARAMETERS (from DevelopmentSolution/example_run/INPUTS.md):
+  Grid: 64x64 | Turns: 180 | Seed: 12345 | Firefighters: 3
+
+See .instructions.md for the agentic workflow.
+See README.md for the full guide.
+
+===============================================================================
